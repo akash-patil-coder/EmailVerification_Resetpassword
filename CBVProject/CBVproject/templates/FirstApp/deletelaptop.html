@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Delete-Laptop</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width:40%">
+    <form method="post" class="jumbotron">
+        <h2 style="color:red">Delete</h2>
+        <p> are you sure to delete laptop which details like company name is {{lap_objects.company}} and price is {{lap_objects.price}} ?</p>
+        {% csrf_token %}
+        <a href="{% url 'delete' lap_objects.lid %}"><button class="btn btn-danger">Delete</button></a>
+        <a href="{% url 'show' %}"><button type="button" class="btn btn-warning">Cancel</button></a>
+    </form>
+    <br>
+
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
